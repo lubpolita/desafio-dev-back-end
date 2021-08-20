@@ -10,7 +10,9 @@ export class CreateEnteDebtor1629343249100 implements MigrationInterface {
             {
               name: 'id',
               type: 'uuid',
-              isPrimary: true
+              isPrimary: true,
+              generationStrategy: 'uuid',
+              default: 'uuid_generate_v4()'
             },
             {
               name: 'name',
@@ -18,7 +20,7 @@ export class CreateEnteDebtor1629343249100 implements MigrationInterface {
             },
             {
               name: 'cnpj',
-              type: 'varchar(14)'
+              type: 'varchar(18)'
             }
           ]
         }

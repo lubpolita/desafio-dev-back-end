@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity()
+@Entity('EnteDebtor')
 export class EnteDebtor {
   @PrimaryGeneratedColumn('uuid')
   id: string
@@ -11,7 +11,7 @@ export class EnteDebtor {
   name: string
 
   @Column({
-    length: 14,
+    length: 18,
     unique: true
   })
   cnpj: string

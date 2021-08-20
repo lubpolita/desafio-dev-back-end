@@ -10,6 +10,8 @@ export class CreateCreditorTable1629338488884 implements MigrationInterface {
             {
               name: 'id',
               type: 'uuid',
+              generationStrategy: 'uuid',
+              default: 'uuid_generate_v4()',
               isPrimary: true
             },
             {

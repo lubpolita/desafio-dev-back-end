@@ -1,17 +1,11 @@
 import { Router } from 'express'
-import { getRepository } from 'typeorm'
-import { Creditor } from '../entities/Creditor'
+import { CreditorController } from '../controller/CreditorController'
 
+const creditorController = new CreditorController()
 const creditorRoutes = Router()
 
-creditorRoutes.post('/', async (request, response) => {
-  try {
-    const repo = getRepository(Creditor)
-    const res = await repo.save(request.body)
-    return response.status(201).json(res)
-  } catch (err) {
-    console.log('err.message :>> ', err.message)
-  }
-})
+creditorRoutes.post('/', creditorController.create)
+
+creditorRoutes.get('/', creditorController.findAll)
 
 export default creditorRoutes

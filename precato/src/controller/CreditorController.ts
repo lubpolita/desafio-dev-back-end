@@ -1,34 +1,44 @@
-import { getRepository } from 'typeorm'
-import { NextFunction, Request, Response } from 'express'
-import { Creditor } from '../entities/Creditor'
-
+import { Request, Response } from 'express'
+import { container } from 'tsyringe'
+import CreateCreditorService from '../services/Creditors/CreateCreditorService'
+import FindCreditorService from '../services/Creditors/FindCreditorService'
+import FindAllCreditorService from '../services/Creditors/FindAllCreditorService'
 export class CreditorController {
-  private readonly creditorRepository = getRepository(Creditor)
-
-  // função para achar todos usuarios
-  // 200 -> valor padrao para falar que deu certo
-  // http response status
-  async all (request: Request, response: Response, next: NextFunction): Promise <void> {
-    const creditors = await this.creditorRepository.find()
-    return response.status(200).json(creditors)
+  public async create (request: Request, response: Response): Promise<void> {
+    try {
+      const createCreditor = container.resolve(CreateCreditorService)
+      const creditor = await createCreditor.execute(request.body)
+      console.dir(creditor)
+      return response.status(201).json(creditor)
+    } catch (err) {
+      return response.status(400).json({
+        message: err.message
+      })
+    }
   }
 
-  // encontrar um usuario
-  async one (request: Request, response: Response, next: NextFunction): Promise <void> {
-    const creditor = await this.creditorRepository.findOne(request.params.id)
-    return response.status(200).json(creditor)
+  public async find (request: Request, response: Response): Promise <void> {
+    try {
+      const findCreditor = container.resolve(FindCreditorService)
+      const creditor = await findCreditor.execute(request.body)
+      console.dir(creditor)
+      return response.status(201).json(creditor)
+    } catch (err) {
+      return response.status(400).json({
+        message: err.message
+      })
+    }
   }
 
-  // salvar usuario
-  async save (request: Request, response: Response, next: NextFunction): Promise <void> {
-    await this.creditorRepository.save(request.body)
-    return response.status(200)
-  }
-
-  // remover usuario
-  async remove (request: Request, response: Response, next: NextFunction): Promise <void> {
-    const CreditorToRemove = await this.creditorRepository.findOne(request.params.id)
-    if (CreditorToRemove === undefined) return response.status(400)
-    await this.creditorRepository.remove(CreditorToRemove)
+  public async findAll (request: Request, response: Response): Promise <void> {
+    try {
+      const findAllCreditor = container.resolve(FindAllCreditorService)
+      const creditoArray = await findAllCreditor.execute()
+      return response.status(201).json(creditoArray)
+    } catch (err) {
+      return response.status(400).json({
+        message: err.message
+      })
+    }
   }
 }

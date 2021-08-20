@@ -1,6 +1,8 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { JoinColumn, Column, ManyToOne, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Creditor } from './Creditor'
+import { EnteDebtor } from './EnteDebtor'
 
-@Entity()
+@Entity('Payments')
 export class Payments {
   @PrimaryGeneratedColumn('uuid')
   id: string
@@ -11,14 +13,10 @@ export class Payments {
   @Column()
   idEnteDebtor: string
 
-  @Column({
-    type: 'float'
-  })
+  @Column()
   initialValue: number
 
-  @Column({
-    type: 'float'
-  })
+  @Column()
   finalValue: number
 
   @CreateDateColumn()
@@ -27,6 +25,14 @@ export class Payments {
   @Column()
   status: string
 
-  @Column()
+  @Column({ nullable: true })
   reason: string
+
+  @JoinColumn({ name: 'idCreditor' })
+  @ManyToOne(() => Creditor)
+  creditor: Creditor
+
+  @JoinColumn({ name: 'idEnteDebitor' })
+  @ManyToOne(() => EnteDebtor)
+  ente_debtor: EnteDebtor
 }

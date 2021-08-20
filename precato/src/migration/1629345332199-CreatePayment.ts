@@ -10,6 +10,8 @@ export class CreatePayment1629345332199 implements MigrationInterface {
             {
               name: 'id',
               type: 'uuid',
+              generationStrategy: 'uuid',
+              default: 'uuid_generate_v4()',
               isPrimary: true
             },
             {
@@ -30,7 +32,8 @@ export class CreatePayment1629345332199 implements MigrationInterface {
             },
             {
               name: 'data',
-              type: 'timestamp'
+              type: 'timestamp',
+              default: 'now()'
             },
             {
               name: 'status',
