@@ -16,7 +16,7 @@ export default class EnteDebtorRepository implements IEnteDebtorRepository {
   }
 
   public async findbyId (id: string): Promise<EnteDebtor | undefined> {
-    const enteDebtor = await this.ormRepository.findOne(id)
+    const enteDebtor = await this.ormRepository.findOne({ where: { id } })
     return enteDebtor
   }
 

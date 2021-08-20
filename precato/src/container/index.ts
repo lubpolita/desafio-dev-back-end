@@ -5,6 +5,10 @@ import { IEnteDebtorRepository } from '../repositories/EnteDebtor/IEnteDebtorRep
 import EnteDebtorRepository from '../repositories/EnteDebtor/EnteDebtorRepository'
 import { IPaymentsRepository } from '../repositories/Payments/IPaymentsRepository'
 import PaymentsRepository from '../repositories/Payments/PaymentsRepository'
+import { IUserRepository } from '../repositories/User/IUserRepository'
+import UserRepository from '../repositories/User/UserRepository'
+import IHashProvider from '../providers/IHashProvider'
+import HashProvider from '../providers/HashProvider'
 
 container.registerSingleton<ICreditorsRepository>(
   'CreditorRepository',
@@ -19,4 +23,14 @@ container.registerSingleton<IEnteDebtorRepository>(
 container.registerSingleton<IPaymentsRepository>(
   'PaymentsRepository',
   PaymentsRepository
+)
+
+container.registerSingleton<IUserRepository>(
+  'UserRepository',
+  UserRepository
+)
+
+container.registerSingleton<IHashProvider>(
+  'HashProvider',
+  HashProvider
 )

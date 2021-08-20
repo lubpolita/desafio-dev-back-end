@@ -6,4 +6,5 @@ export interface ICreditorsRepository {
   findbyId: (id: string) => Promise <Creditor | undefined>
   create: (data: ICreateCreditorRequestDTO) => Promise <Creditor>
   findAll: () => Promise <Creditor[] | undefined>
+  checkStatus: (id: string) => Promise<string>
 }

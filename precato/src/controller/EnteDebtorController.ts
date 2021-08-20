@@ -2,6 +2,8 @@ import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 import CreateEnteDebtorService from '../services/EnteDebtors/CreateEnteDebtorService'
 import FindAllEnteDebtorService from '../services/EnteDebtors/FindAllEnteDebtor'
+import FindEnteDebtorService from '../services/EnteDebtors/FindEnteDebtorService'
+import { EnteDebtor } from '../entities/EnteDebtor'
 export class EnteDebtorController {
   public async create (request: Request, response: Response): Promise<void> {
     try {
@@ -21,6 +23,19 @@ export class EnteDebtorController {
       const findAllEnteDebtor = container.resolve(FindAllEnteDebtorService)
       const enteDebtorArray = await findAllEnteDebtor.execute()
       return response.status(201).json(enteDebtorArray)
+    } catch (err) {
+      return response.status(400).json({
+        message: err.message
+      })
+    }
+  }
+
+  public async findById (request: Request, response: Response): Promise <EnteDebtor | undefined> {
+    try {
+      const findEnteDebtor = container.resolve(FindEnteDebtorService)
+      const creditor = await findEnteDebtor.execute(request.body)
+      console.dir(creditor)
+      return response.status(201).json(creditor)
     } catch (err) {
       return response.status(400).json({
         message: err.message

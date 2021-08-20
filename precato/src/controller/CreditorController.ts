@@ -3,6 +3,7 @@ import { container } from 'tsyringe'
 import CreateCreditorService from '../services/Creditors/CreateCreditorService'
 import FindCreditorService from '../services/Creditors/FindCreditorService'
 import FindAllCreditorService from '../services/Creditors/FindAllCreditorService'
+import { Creditor } from '../entities/Creditor'
 export class CreditorController {
   public async create (request: Request, response: Response): Promise<void> {
     try {
@@ -17,7 +18,7 @@ export class CreditorController {
     }
   }
 
-  public async find (request: Request, response: Response): Promise <void> {
+  public async findById (request: Request, response: Response): Promise <Creditor | undefined> {
     try {
       const findCreditor = container.resolve(FindCreditorService)
       const creditor = await findCreditor.execute(request.body)

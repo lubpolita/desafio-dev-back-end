@@ -16,12 +16,21 @@ export default class CreditorRepository implements ICreditorsRepository {
   }
 
   public async findbyId (id: string): Promise<Creditor | undefined> {
-    const creditor = await this.ormRepository.findOne(id)
+    const creditor = await this.ormRepository.findOne({ where: { id } })
     return creditor
   }
 
   public async findAll (): Promise<Creditor[] | undefined> {
     const creditors = await this.ormRepository.find()
     return creditors
+  }
+
+  public async checkStatus (id: string): Promise<string> {
+    const creditor = await this.ormRepository.findOne({ where: { id } })
+    if (creditor === undefined) {
+      return 'disapproved'
+    }
+    const status = creditor.registerStatus
+    return status
   }
 }
