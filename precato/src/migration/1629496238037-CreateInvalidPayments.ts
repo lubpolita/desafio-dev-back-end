@@ -15,12 +15,16 @@ export class CreateInvalidPayments1629496238037 implements MigrationInterface {
               isPrimary: true
             },
             {
+              name: 'idRemittance',
+              type: 'varchar'
+            },
+            {
               name: 'idCreditor',
-              type: 'uuid'
+              type: 'varchar'
             },
             {
               name: 'idEnteDebtor',
-              type: 'uuid'
+              type: 'varchar'
             },
             {
               name: 'initialValue',
@@ -41,24 +45,7 @@ export class CreateInvalidPayments1629496238037 implements MigrationInterface {
             },
             {
               name: 'reason',
-              type: 'varchar(50)',
-              isNullable: true
-            }
-          ],
-          foreignKeys: [
-            {
-              referencedTableName: 'Creditor',
-              referencedColumnNames: ['id'],
-              columnNames: ['idCreditor'],
-              onDelete: 'CASCADE',
-              onUpdate: 'CASCADE'
-            },
-            {
-              referencedTableName: 'EnteDebtor',
-              referencedColumnNames: ['id'],
-              columnNames: ['idEnteDebtor'],
-              onDelete: 'CASCADE',
-              onUpdate: 'CASCADE'
+              type: 'varchar(50)'
             }
           ]
         }

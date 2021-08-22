@@ -7,7 +7,6 @@ export class PaymentsController {
     try {
       const createPayments = container.resolve(CreatePaymentsService)
       const payments = await createPayments.execute(request.body)
-      console.dir(payments)
       return response.status(201).json(payments)
     } catch (err) {
       return response.status(400).json({

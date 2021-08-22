@@ -1,4 +1,4 @@
-export interface ICreatePaymentsRequestDTO{
+export interface ICreateInvalidPaymentsRequestDTO{
   idRemittance: string
   idCreditor: string
   idEnteDebtor: string

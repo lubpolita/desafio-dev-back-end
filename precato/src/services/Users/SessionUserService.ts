@@ -2,7 +2,7 @@ import { inject, injectable } from 'tsyringe'
 import User from '../../entities/User'
 import { IUserRepository } from '../../repositories/User/IUserRepository'
 import IHashProvider from '../../providers/IHashProvider'
-import { sign } from 'jsonwebtoken'
+import { ITokenRepository } from '../../repositories/Token/ITokenRepository'
 
 interface IResquest{
   username: string
@@ -21,7 +21,10 @@ export default class SessionUserService {
     private readonly userRepository: IUserRepository,
 
     @inject('HashProvider')
-    private readonly hashProvider: IHashProvider
+    private readonly hashProvider: IHashProvider,
+
+    @inject('TokenRepository')
+    private readonly tokenRepository: ITokenRepository
   ) {}
 
   public async execute (data: IResquest): Promise<IResponse> {
@@ -35,13 +38,8 @@ export default class SessionUserService {
     if (!passwordMatched) {
       throw new Error('Usuário ou senha incorreto.')
     }
-    const token = sign({}, '62ec914d69fe80cfd34efb2ef7831f36', {
-      subject: String(user.id),
-      expiresIn: '1d'
-    })
-
+    const token = await this.tokenRepository.create(user)
     user.password = ''
-
-    return { user, token }
+    return { user: user, token: token.token }
   }
 }

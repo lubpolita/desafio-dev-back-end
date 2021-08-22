@@ -7,6 +7,9 @@ export class Payments {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
+  @Column({ unique: true })
+  idRemittance: string
+
   @Column()
   idCreditor: string
 

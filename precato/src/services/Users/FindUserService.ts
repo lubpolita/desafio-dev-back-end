@@ -12,7 +12,7 @@ export default class FindUserService {
   }
 
   public async execute (data: string): Promise<User | undefined> {
-    const user = await this.userRepository.findById(data)
+    const user = await this.userRepository.findByUsername(data)
     return user
   }
 }

@@ -15,9 +15,9 @@ export default class PaymentsRepository implements IPaymentsRepository {
     return payments
   }
 
-  public async findbyId (id: string): Promise<Payments | undefined> {
-    const payments = await this.ormRepository.findOne(id)
-    return payments
+  public async findbyRemittance (idRem: string): Promise<Payments | undefined> {
+    const payment = await this.ormRepository.findOne({ idRemittance: idRem })
+    return payment
   }
 
   public async index (): Promise<Payments[] |undefined> {

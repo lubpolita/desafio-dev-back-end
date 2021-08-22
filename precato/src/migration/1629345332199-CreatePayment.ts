@@ -15,6 +15,10 @@ export class CreatePayment1629345332199 implements MigrationInterface {
               isPrimary: true
             },
             {
+              name: 'idRemittance',
+              type: 'varchar'
+            },
+            {
               name: 'idCreditor',
               type: 'uuid'
             },
@@ -51,14 +55,16 @@ export class CreatePayment1629345332199 implements MigrationInterface {
               referencedColumnNames: ['id'],
               columnNames: ['idCreditor'],
               onDelete: 'CASCADE',
-              onUpdate: 'CASCADE'
+              onUpdate: 'CASCADE',
+              name: 'fk_creditor'
             },
             {
               referencedTableName: 'EnteDebtor',
               referencedColumnNames: ['id'],
               columnNames: ['idEnteDebtor'],
               onDelete: 'CASCADE',
-              onUpdate: 'CASCADE'
+              onUpdate: 'CASCADE',
+              name: 'fk_ente_debtor'
             }
           ]
         }
@@ -67,6 +73,8 @@ export class CreatePayment1629345332199 implements MigrationInterface {
   }
 
   public async down (queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropForeignKey('Payments', 'fk_creditor')
+    await queryRunner.dropForeignKey('Payments', 'fk_ente_debtor')
     await queryRunner.dropTable('Payments')
   }
 }
