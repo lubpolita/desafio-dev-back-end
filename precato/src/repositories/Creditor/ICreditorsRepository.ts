@@ -7,4 +7,5 @@ export interface ICreditorsRepository {
   create: (data: ICreateCreditorRequestDTO) => Promise <Creditor>
   findAll: () => Promise <Creditor[] | undefined>
   checkStatus: (id: string) => Promise<string>
+  findByCpf: (cpf: string) => Promise<Creditor | undefined>
 }

@@ -16,7 +16,7 @@ export class CreateEnteDebtor1629343249100 implements MigrationInterface {
             },
             {
               name: 'name',
-              type: 'varchar(100)'
+              type: 'varchar'
             },
             {
               name: 'cnpj',

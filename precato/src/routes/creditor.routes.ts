@@ -8,4 +8,6 @@ creditorRoutes.post('/', creditorController.create)
 
 creditorRoutes.get('/', creditorController.findAll)
 
+creditorRoutes.get('/:cpf', creditorController.findByCpf)
+
 export default creditorRoutes

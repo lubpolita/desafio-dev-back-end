@@ -20,6 +20,11 @@ export default class EnteDebtorRepository implements IEnteDebtorRepository {
     return enteDebtor
   }
 
+  public async findByCnpj (cpnj: string): Promise<EnteDebtor | undefined> {
+    const enteDebtor = await this.ormRepository.findOne({ where: { cnpj: cpnj } })
+    return enteDebtor
+  }
+
   public async findAll (): Promise<EnteDebtor[] | undefined> {
     const enteDebtorArray = await this.ormRepository.find()
     return enteDebtorArray

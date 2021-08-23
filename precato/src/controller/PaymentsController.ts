@@ -9,6 +9,7 @@ export class PaymentsController {
       const payments = await createPayments.execute(request.body)
       return response.status(201).json(payments)
     } catch (err) {
+      console.log(err)
       return response.status(400).json({
         message: err.message
       })

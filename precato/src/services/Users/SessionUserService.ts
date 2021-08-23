@@ -32,9 +32,7 @@ export default class SessionUserService {
     if (user === undefined) {
       throw new Error('Usuário ou senha incorreto.')
     }
-
     const passwordMatched = await this.hashProvider.compare(data.password, user.password)
-
     if (!passwordMatched) {
       throw new Error('Usuário ou senha incorreto.')
     }

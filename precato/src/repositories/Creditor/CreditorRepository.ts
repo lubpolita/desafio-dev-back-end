@@ -20,6 +20,11 @@ export default class CreditorRepository implements ICreditorsRepository {
     return creditor
   }
 
+  public async findByCpf (cpf: string): Promise<Creditor | undefined> {
+    const creditor = await this.ormRepository.findOne({ where: { cpf: cpf } })
+    return creditor
+  }
+
   public async findAll (): Promise<Creditor[] | undefined> {
     const creditors = await this.ormRepository.find()
     return creditors

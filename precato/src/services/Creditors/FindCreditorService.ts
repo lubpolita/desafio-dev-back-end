@@ -7,9 +7,7 @@ export default class FindCreditorService {
   constructor (
     @inject('CreditorRepository')
     private readonly CreditorRepository: ICreditorsRepository
-  ) {
-
-  }
+  ) {}
 
   public async execute (data: string): Promise<Creditor | undefined> {
     const creditor = await this.CreditorRepository.findbyId(data)

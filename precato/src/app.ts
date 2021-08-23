@@ -1,4 +1,5 @@
-import * as express from 'express'
+// import * as express from 'express'
+import express from 'express'
 import routes from './routes'
 import 'reflect-metadata'
 import './container'

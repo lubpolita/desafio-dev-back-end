@@ -12,6 +12,10 @@ export default class CreateEnteDebtorService {
   }
 
   public async execute (data: ICreateEnteDebtorRequestDTO): Promise<EnteDebtor> {
+    const verifyCnpj = await this.enteDebtorRepository.findByCnpj(data.cnpj)
+    if (verifyCnpj !== undefined) {
+      throw new Error('Já existe uma empresa cadastrada com esse CNPJ')
+    }
     const enteDebtor = await this.enteDebtorRepository.create(data)
     return enteDebtor
   }

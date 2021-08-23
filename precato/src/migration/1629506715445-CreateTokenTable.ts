@@ -15,12 +15,16 @@ export class CreateTokenTable1629506715445 implements MigrationInterface {
               isPrimary: true
             },
             {
+              name: 'userId',
+              type: 'uuid'
+            },
+            {
               name: 'name',
               type: 'varchar'
             },
             {
               name: 'token',
-              type: 'varchar(64)',
+              type: 'varchar',
               isUnique: true
             },
             {
@@ -36,6 +40,6 @@ export class CreateTokenTable1629506715445 implements MigrationInterface {
 
   public async down (queryRunner: QueryRunner): Promise<void> {
     // await queryRunner.dropForeignKey('Token', 'fk_user')
-    await queryRunner.dropTable('Token')
+    await queryRunner.dropTable('Tokens')
   }
 }

@@ -45,7 +45,7 @@ export class CreatePayment1629345332199 implements MigrationInterface {
             },
             {
               name: 'reason',
-              type: 'varchar(50)',
+              type: 'varchar',
               isNullable: true
             }
           ],

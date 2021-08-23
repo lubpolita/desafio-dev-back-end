@@ -16,7 +16,7 @@ export class CreateCreditorTable1629338488884 implements MigrationInterface {
             },
             {
               name: 'name',
-              type: 'varchar(100)'
+              type: 'varchar'
             },
             {
               name: 'cpf',
@@ -24,7 +24,7 @@ export class CreateCreditorTable1629338488884 implements MigrationInterface {
             },
             {
               name: 'registerStatus',
-              type: 'varchar(50)'
+              type: 'varchar'
             }
           ]
         }

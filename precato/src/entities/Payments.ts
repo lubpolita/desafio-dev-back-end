@@ -35,7 +35,7 @@ export class Payments {
   @ManyToOne(() => Creditor)
   creditor: Creditor
 
-  @JoinColumn({ name: 'idEnteDebitor' })
+  @JoinColumn({ name: 'idEnteDebtor' })
   @ManyToOne(() => EnteDebtor)
   ente_debtor: EnteDebtor
 }

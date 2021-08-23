@@ -1,7 +1,7 @@
 import { IInvalidPaymentsRepository } from './IInvalidPaymentsRepository'
 import { Repository, getRepository } from 'typeorm'
 import { InvalidPayments } from '../../entities/InvalidPayments'
-import { ICreateInvalidPaymentsRequestDTO } from '../../dtos/CreateInvalidPayments'
+import { ICreateInvalidPaymentsRequestDTO } from '../../dtos/CreateInvalidPaymentsDTO'
 
 export default class InvalidPaymentsRepository implements IInvalidPaymentsRepository {
   private readonly ormRepository: Repository<InvalidPayments>

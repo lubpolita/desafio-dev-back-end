@@ -41,11 +41,11 @@ export class CreateInvalidPayments1629496238037 implements MigrationInterface {
             },
             {
               name: 'status',
-              type: 'varchar(50)'
+              type: 'varchar'
             },
             {
               name: 'reason',
-              type: 'varchar(50)'
+              type: 'varchar'
             }
           ]
         }

@@ -6,4 +6,5 @@ export interface IEnteDebtorRepository {
   findbyId: (id: string) => Promise <EnteDebtor | undefined>
   create: (data: ICreateEnteDebtorRequestDTO) => Promise <EnteDebtor>
   findAll: () => Promise <EnteDebtor[] | undefined>
+  findByCnpj: (cnpj: string) => Promise <EnteDebtor | undefined>
 }

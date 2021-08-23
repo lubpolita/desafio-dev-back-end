@@ -5,4 +5,5 @@ export interface IUserRepository {
   create: (data: ICreateUserRequestDTO) => Promise <User>
   findById: (data: string) => Promise <User | undefined>
   findByUsername: (data: string) => Promise <User | undefined>
+  findAll: () => Promise<User[] | undefined>
 }

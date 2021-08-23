@@ -12,6 +12,10 @@ export default class CreateCreditorService {
   }
 
   public async execute (data: ICreateCreditorRequestDTO): Promise<Creditor> {
+    const verifyCpf = await this.creditorRepository.findByCpf(data.cpf)
+    if (verifyCpf !== undefined) {
+      throw new Error('Este CPF já está cadastrado.')
+    }
     const creditor = await this.creditorRepository.create(data)
     return creditor
   }
