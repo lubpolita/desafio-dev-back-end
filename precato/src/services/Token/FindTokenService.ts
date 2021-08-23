@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import Token from '../../entities/Token'
-import { ITokenRepository } from '../../repositories/Token/ITokenRepository'
+import Token from '../../shared/typeorm/entities/Token'
+import { ITokenRepository } from '../../shared/typeorm/repositories/Token/ITokenRepository'
 
 @injectable()
 export default class FindTokerService {

@@ -1,7 +1,7 @@
 import { Repository, getRepository } from 'typeorm'
 import { IEnteDebtorRepository } from './IEnteDebtorRepository'
 import { EnteDebtor } from '../../entities/EnteDebtor'
-import { ICreateEnteDebtorRequestDTO } from '../../dtos/CreateEnteDebtorDTO'
+import { ICreateEnteDebtorRequestDTO } from '../../../../dtos/CreateEnteDebtorDTO'
 
 export default class EnteDebtorRepository implements IEnteDebtorRepository {
   private readonly ormRepository: Repository<EnteDebtor>

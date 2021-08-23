@@ -1,6 +1,6 @@
 import { Repository, getRepository } from 'typeorm'
 import User from '../../entities/User'
-import { ICreateUserRequestDTO } from '../../dtos/CreateUserDTO'
+import { ICreateUserRequestDTO } from '../../../../dtos/CreateUserDTO'
 import { IUserRepository } from './IUserRepository'
 export default class UserRepository implements IUserRepository {
   private readonly ormRepository: Repository<User>

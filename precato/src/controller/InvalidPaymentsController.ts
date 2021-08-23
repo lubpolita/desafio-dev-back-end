@@ -1,7 +1,7 @@
 import { Response, Request } from 'express'
 import CreateInvalidPaymentsService from '../services/InvalidPayments/CreateInvalidPayments'
 import { container } from 'tsyringe'
-import { InvalidPayments } from '../entities/InvalidPayments'
+import { InvalidPayments } from '../shared/typeorm/entities/InvalidPayments'
 import FindAllInvalidPaymentsService from '../services/InvalidPayments/FindAllInvalidPaymentsService'
 export class InvalidPaymentsController {
   public async create (request: Request, response: Response): Promise <void> {

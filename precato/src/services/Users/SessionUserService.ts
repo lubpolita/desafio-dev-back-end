@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe'
-import User from '../../entities/User'
-import { IUserRepository } from '../../repositories/User/IUserRepository'
-import IHashProvider from '../../providers/IHashProvider'
-import { ITokenRepository } from '../../repositories/Token/ITokenRepository'
+import User from '../../shared/typeorm/entities/User'
+import { IUserRepository } from '../../shared/typeorm/repositories/User/IUserRepository'
+import IHashProvider from '../../shared/providers/IHashProvider'
+import { ITokenRepository } from '../../shared/typeorm/repositories/Token/ITokenRepository'
 
 interface IResquest{
   username: string

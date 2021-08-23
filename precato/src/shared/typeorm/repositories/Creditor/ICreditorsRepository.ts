@@ -1,6 +1,6 @@
 
 import { Creditor } from '../../entities/Creditor'
-import { ICreateCreditorRequestDTO } from '../../dtos/CreateCreditorDTO'
+import { ICreateCreditorRequestDTO } from '../../../../dtos/CreateCreditorDTO'
 
 export interface ICreditorsRepository {
   findbyId: (id: string) => Promise <Creditor | undefined>

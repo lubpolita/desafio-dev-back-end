@@ -4,7 +4,7 @@ import { container } from 'tsyringe'
 import CreateCreditorService from '../services/Creditors/CreateCreditorService'
 import FindCreditorService from '../services/Creditors/FindCreditorService'
 import FindAllCreditorService from '../services/Creditors/FindAllCreditorService'
-import { Creditor } from '../entities/Creditor'
+import { Creditor } from '../shared/typeorm/entities/Creditor'
 import FindByCpfService from '../services/Creditors/FindByCpfService'
 export class CreditorController {
   public async create (request: Request, response: Response): Promise<void> {

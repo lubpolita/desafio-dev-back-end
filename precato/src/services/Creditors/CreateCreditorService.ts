@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import { Creditor } from '../../entities/Creditor'
-import { ICreditorsRepository } from '../../repositories/Creditor/ICreditorsRepository'
+import { Creditor } from '../../shared/typeorm/entities/Creditor'
+import { ICreditorsRepository } from '../../shared/typeorm/repositories/Creditor/ICreditorsRepository'
 import { ICreateCreditorRequestDTO } from '../../dtos/CreateCreditorDTO'
 // regras de negocio
 @injectable()

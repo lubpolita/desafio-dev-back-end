@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import { InvalidPayments } from '../../entities/InvalidPayments'
-import { IInvalidPaymentsRepository } from '../../repositories/InvalidPayments/IInvalidPaymentsRepository'
+import { InvalidPayments } from '../../shared/typeorm/entities/InvalidPayments'
+import { IInvalidPaymentsRepository } from '../../shared/typeorm/repositories/InvalidPayments/IInvalidPaymentsRepository'
 
 @injectable()
 export default class FindAllInvalidPaymentsService {

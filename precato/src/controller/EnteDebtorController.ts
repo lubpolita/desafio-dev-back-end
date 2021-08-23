@@ -3,7 +3,7 @@ import { container } from 'tsyringe'
 import CreateEnteDebtorService from '../services/EnteDebtors/CreateEnteDebtorService'
 import FindAllEnteDebtorService from '../services/EnteDebtors/FindAllEnteDebtor'
 import FindEnteDebtorService from '../services/EnteDebtors/FindEnteDebtorService'
-import { EnteDebtor } from '../entities/EnteDebtor'
+import { EnteDebtor } from '../shared/typeorm/entities/EnteDebtor'
 import FindByCnpjService from '../services/EnteDebtors/FindByCnpjService'
 export class EnteDebtorController {
   public async create (request: Request, response: Response): Promise<void> {

@@ -1,7 +1,7 @@
 import { Repository, getRepository } from 'typeorm'
 import { IPaymentsRepository } from './IPaymentsRepository'
 import { Payments } from '../../entities/Payments'
-import { ICreatePaymentsRequestDTO } from '../../dtos/CreatePaymentsDTO'
+import { ICreatePaymentsRequestDTO } from '../../../../dtos/CreatePaymentsDTO'
 
 export default class PaymentsRepository implements IPaymentsRepository {
   private readonly ormRepository: Repository<Payments>

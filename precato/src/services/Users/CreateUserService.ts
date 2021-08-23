@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe'
-import { IUserRepository } from '../../repositories/User/IUserRepository'
+import { IUserRepository } from '../../shared/typeorm/repositories/User/IUserRepository'
 import { ICreateUserRequestDTO } from '../../dtos/CreateUserDTO'
-import User from '../../entities/User'
-import IHashProvider from '../../providers/IHashProvider'
+import User from '../../shared/typeorm/entities/User'
+import IHashProvider from '../../shared/providers/IHashProvider'
 
 @injectable()
 export default class CreateUserService {

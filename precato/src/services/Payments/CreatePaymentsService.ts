@@ -1,11 +1,11 @@
 import { inject, injectable } from 'tsyringe'
-import { IPaymentsRepository } from '../../repositories/Payments/IPaymentsRepository'
+import { IPaymentsRepository } from '../../shared/typeorm/repositories/Payments/IPaymentsRepository'
 import { ICreatePaymentsRequestDTO } from '../../dtos/CreatePaymentsDTO'
-import { Payments } from '../../entities/Payments'
-import { ICreditorsRepository } from '../../repositories/Creditor/ICreditorsRepository'
-import { IEnteDebtorRepository } from '../../repositories/EnteDebtor/IEnteDebtorRepository'
-import { InvalidPayments } from '../../entities/InvalidPayments'
-import { IInvalidPaymentsRepository } from '../../repositories/InvalidPayments/IInvalidPaymentsRepository'
+import { Payments } from '../../shared/typeorm/entities/Payments'
+import { ICreditorsRepository } from '../../shared/typeorm/repositories/Creditor/ICreditorsRepository'
+import { IEnteDebtorRepository } from '../../shared/typeorm/repositories/EnteDebtor/IEnteDebtorRepository'
+import { InvalidPayments } from '../../shared/typeorm/entities/InvalidPayments'
+import { IInvalidPaymentsRepository } from '../../shared/typeorm/repositories/InvalidPayments/IInvalidPaymentsRepository'
 // regras de negocio
 @injectable()
 export default class CreatePaymentsService {

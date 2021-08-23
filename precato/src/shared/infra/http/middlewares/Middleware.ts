@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express'
+/*  */import { Request, Response, NextFunction } from 'express'
 import { container } from 'tsyringe'
-import FindTokerService from '../services/Token/FindTokenService'
+import FindTokerService from '../../../../services/Token/FindTokenService'
 
 export default class Middleware {
   public async middleware (request: Request, response: Response, next: NextFunction): Promise<void> {

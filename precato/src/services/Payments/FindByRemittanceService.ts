@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import { IPaymentsRepository } from '../../repositories/Payments/IPaymentsRepository'
-import { Payments } from '../../entities/Payments'
+import { IPaymentsRepository } from '../../shared/typeorm/repositories/Payments/IPaymentsRepository'
+import { Payments } from '../../shared/typeorm/entities/Payments'
 
 @injectable()
 export default class FindByRemittanceService {

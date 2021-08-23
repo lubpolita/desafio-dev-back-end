@@ -1,6 +1,6 @@
 
 import { Payments } from '../../entities/Payments'
-import { ICreatePaymentsRequestDTO } from '../../dtos/CreatePaymentsDTO'
+import { ICreatePaymentsRequestDTO } from '../../../../dtos/CreatePaymentsDTO'
 
 export interface IPaymentsRepository {
   findbyRemittance: (idRemittance: string) => Promise <Payments | undefined>

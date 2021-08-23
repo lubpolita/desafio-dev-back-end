@@ -1,6 +1,6 @@
 import { Repository, getRepository } from 'typeorm'
 import { Creditor } from '../../entities/Creditor'
-import { ICreateCreditorRequestDTO } from '../../dtos/CreateCreditorDTO'
+import { ICreateCreditorRequestDTO } from '../../../../dtos/CreateCreditorDTO'
 import { ICreditorsRepository } from './ICreditorsRepository'
 
 export default class CreditorRepository implements ICreditorsRepository {

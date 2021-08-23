@@ -1,4 +1,4 @@
-import { InvalidPaymentsController } from '../controller/InvalidPaymentsController'
+import { InvalidPaymentsController } from '../../../../controller/InvalidPaymentsController'
 import { Router } from 'express'
 import Middleware from '../middlewares/Middleware'
 

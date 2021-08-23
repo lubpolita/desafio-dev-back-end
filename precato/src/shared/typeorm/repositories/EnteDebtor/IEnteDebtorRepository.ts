@@ -1,5 +1,5 @@
 
-import { ICreateEnteDebtorRequestDTO } from '../../dtos/CreateEnteDebtorDTO'
+import { ICreateEnteDebtorRequestDTO } from '../../../../dtos/CreateEnteDebtorDTO'
 import { EnteDebtor } from '../../entities/EnteDebtor'
 
 export interface IEnteDebtorRepository {

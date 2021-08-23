@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import User from '../../entities/User'
-import { IUserRepository } from '../../repositories/User/IUserRepository'
+import User from '../../shared/typeorm/entities/User'
+import { IUserRepository } from '../../shared/typeorm/repositories/User/IUserRepository'
 
 @injectable()
 export default class FindUserService {

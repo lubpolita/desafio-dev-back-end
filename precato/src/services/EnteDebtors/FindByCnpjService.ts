@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
-import { EnteDebtor } from '../../entities/EnteDebtor'
-import { IEnteDebtorRepository } from '../../repositories/EnteDebtor/IEnteDebtorRepository'
+import { EnteDebtor } from '../../shared/typeorm/entities/EnteDebtor'
+import { IEnteDebtorRepository } from '../../shared/typeorm/repositories/EnteDebtor/IEnteDebtorRepository'
 
 @injectable()
 export default class FindByCnpjService {

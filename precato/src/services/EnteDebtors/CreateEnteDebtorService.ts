@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe'
-import { IEnteDebtorRepository } from '../../repositories/EnteDebtor/IEnteDebtorRepository'
+import { IEnteDebtorRepository } from '../../shared/typeorm/repositories/EnteDebtor/IEnteDebtorRepository'
 import { ICreateEnteDebtorRequestDTO } from '../../dtos/CreateEnteDebtorDTO'
-import { EnteDebtor } from '../../entities/EnteDebtor'
+import { EnteDebtor } from '../../shared/typeorm/entities/EnteDebtor'
 // regras de negocio
 @injectable()
 export default class CreateEnteDebtorService {
