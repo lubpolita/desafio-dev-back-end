@@ -51,7 +51,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 Guia prático de como rodar o projeto localmente.
 ### Pré-requisitos
 
-É necessário ter instalado no seu computador o [NodeJS](https://nodejs.org/en/) e também um banco de dados para fazer a conexão com a API. As configurações de conexão com o banco de dados podem ser alteradas facilmente no arquivo chamado "ormconfig.json". É importante ressaltar que nesse projeto foi utilizado o banco de dados [Postgresql](https://www.postgresql.org/).
+É necessário ter instalado no seu computador o [NodeJS](https://nodejs.org/en/) e também um banco de dados para fazer a conexão com a API. As configurações de conexão com o banco de dados podem ser alteradas facilmente no arquivo chamado "ormconfig.json" e também no arquivo "index.ts" do diretório "/shared/typeorm/index.ts". É importante ressaltar que nesse projeto foi utilizado o banco de dados [Postgresql](https://www.postgresql.org/).
 
 ### Instalação e Inicialização
 
@@ -70,11 +70,11 @@ Guia prático de como rodar o projeto localmente.
    ```sh
    yarn
    ```
-5. Rode os testes automáticos implementados
+5. Rode os testes automatizados implementados
    ```sh
    yarn test
    ```
-   Caso queira visualizar os logs dos testes automáticos digite o seguinte comando:
+   Caso queira visualizar os logs dos testes automatizados digite o seguinte comando:
    ```sh
    yarn test:verbose
    ```
