@@ -64,7 +64,7 @@ Guia prático de como rodar o projeto localmente.
    cd desafio-dev-back-end
    ```
    ```sh
-   cd precato
+   cd projeto
    ```
 4. Instale as dependências
    ```sh
